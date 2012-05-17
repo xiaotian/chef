@@ -4,7 +4,7 @@ command_exists () {
 }
 
 apt-get -y update
-apt-get -y install git-core build-essential zlib1g-dev libssl-dev libreadline5-dev libyaml-dev
+apt-get -y install git build-essential zlib1g-dev libssl-dev libreadline-dev libyaml-dev
 
 if ! command_exists ruby ; then
   echo 'Installing ruby from source ...'
