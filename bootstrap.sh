@@ -10,7 +10,7 @@ if ! command_exists ruby ; then
   echo 'Installing ruby from source ...'
   ruby_src=ruby-1.9.3-p194
   cd /tmp
-  wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/${ruby_src}.tar.gz
+  wget -O ${ruby_src}.tar.gz ftp://ftp.ruby-lang.org/pub/ruby/1.9/${ruby_src}.tar.gz
   tar -xvzf ${ruby_src}.tar.gz
   cd ${ruby_src}/
   ./configure --prefix=/usr/local
