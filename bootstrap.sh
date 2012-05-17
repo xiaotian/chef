@@ -18,7 +18,7 @@ if ! command_exists ruby ; then
   make install
 fi
 
-if ! command_exists chef ; then
+if ! command_exists chef-solo ; then
   echo 'Installing chef ...'
   gem install chef ruby-shadow --no-ri --no-rdoc
 fi
