@@ -6,7 +6,7 @@ command_exists () {
 apt-get -y update
 apt-get -y install git build-essential zlib1g-dev libssl-dev libreadline-dev libyaml-dev
 
-if ! command_exists ruby ; then
+if [ ! command_exists ruby ]; then
   echo 'Installing ruby from source ...'
   ruby_src=ruby-1.9.3-p194
   cd /tmp
@@ -18,8 +18,15 @@ if ! command_exists ruby ; then
   make install
 fi
 
-if ! command_exists chef-solo ; then
+if [ ! command_exists chef-solo ]; then
   echo 'Installing chef ...'
   gem install chef ruby-shadow --no-ri --no-rdoc
 fi
 
+if [ ! -d "/var/chef" ]; then
+  mkdir -p /var
+  git clone git://github.com/xiaotian/chef.git /var/chef
+  cd /var/chef
+  git submodule init
+  git submodule update
+fi
