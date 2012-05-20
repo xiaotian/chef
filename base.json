@@ -1,4 +1,13 @@
 {
-  "run_list": ["role[base_server]"]
+  "dotfiles":{
+    "full_name": "Xiaotian Guo",
+    "email": "guoxiaotian@gmail.com",
+    "github_username": "xiaotian"
+  },
+
+  "run_list": [
+    "role[base_server]",
+    "role[workstation]"
+  ]
 }
 
