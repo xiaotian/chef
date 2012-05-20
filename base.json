@@ -6,7 +6,6 @@
   },
 
   "run_list": [
-    "role[base_server]",
     "role[workstation]"
   ]
 }

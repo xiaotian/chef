@@ -3,6 +3,9 @@
   "description": "Deploy dotfiles for a workstation",
   "json_class": "Chef::Role",
   "chef_type": "role",
-  "run_list": [ "recipe[dotfiles]" ]
+  "run_list": [ 
+    "recipe[mytools]",
+    "recipe[dotfiles]"
+  ]
 }
 

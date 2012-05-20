@@ -1,7 +1,10 @@
 {
   "name": "base_server",
-  "description": "This is just a test role, no big deal.",
+  "description": "Build a basic server with some handy utilities",
   "json_class": "Chef::Role",
   "chef_type": "role",
-  "run_list": [ "recipe[mytools]" ]
+  "run_list": [ 
+    "recipe[mytools]",
+    "recipe[dotfiles]"
+  ]
 }
