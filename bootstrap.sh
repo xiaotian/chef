@@ -30,3 +30,9 @@ if [ ! -d "/var/chef" ]; then
   git submodule init
   git submodule update
 fi
+
+if [ $NODE ]; then
+  echo 'Start cooking...'
+  cd /var/chef
+  chef-solo -c solo.rb -j $NODE.json
+fi
