@@ -11,6 +11,7 @@ node['rvm']['user_default_ruby'] = ruby_str
 node['rvm']['user_global_gems'] = [
     { 'name' => 'bundler' },
     { 'name' => 'rake' },
+    { 'name' => 'cheat' },
     { 'name' => 'pry' }
 ]
 
