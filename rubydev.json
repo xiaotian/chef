@@ -1,0 +1,14 @@
+{
+  "dotfiles":{
+    "full_name": "Xiaotian Guo",
+    "email": "guoxiaotian@gmail.com",
+    "github_username": "xiaotian"
+  },
+
+  "run_list": [
+    "role[workstation]",
+    "role[rubydev]"
+  ]
+}
+
+
