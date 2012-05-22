@@ -20,8 +20,8 @@
 	path = cookbooks/postgresql
 	url = git://github.com/opscode-cookbooks/postgresql.git
 [submodule "cookbooks/database"]
-	path = cookbook/database
+	path = cookbooks/database
 	url = git://github.com/opscode-cookbooks/database.git
 [submodule "cookbooks/openssl"]
-	path = cookbook/openssl
+	path = cookbooks/openssl
 	url = git://github.com/opscode-cookbooks/openssl.git
