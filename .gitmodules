@@ -19,3 +19,9 @@
 [submodule "cookbooks/postgresql"]
 	path = cookbooks/postgresql
 	url = git://github.com/damm/postgresql.git
+[submodule "cookbook/database"]
+	path = cookbook/database
+	url = git://github.com/opscode-cookbooks/database.git
+[submodule "cookbook/openssl"]
+	path = cookbook/openssl
+	url = git://github.com/opscode-cookbooks/openssl.git
