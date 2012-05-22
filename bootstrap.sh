@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 command_exists () {
-  command -v "$1" &> /dev/null ;
+  command -v "$1" > /dev/null ;
 }
 
 apt-get -y update
 apt-get -y install git-core build-essential zlib1g-dev libssl-dev libreadline-dev libyaml-dev
 
-if [ ! command_exists ruby ]; then
+if ! command_exists ruby ; then
   echo 'Installing ruby from source ...'
   ruby_src=ruby-1.9.3-p194
   cd /tmp
@@ -16,11 +16,15 @@ if [ ! command_exists ruby ]; then
   ./configure --prefix=/usr/local
   make
   make install
+else
+  echo 'found ruby.'
 fi
 
-if [ ! command_exists chef-solo ]; then
+if ! command_exists chef-solo ; then
   echo 'Installing chef ...'
   gem install chef ruby-shadow --no-ri --no-rdoc
+else
+  echo 'found chef-solo.'
 fi
 
 if [ ! -d "/var/chef" ]; then
@@ -29,10 +33,14 @@ if [ ! -d "/var/chef" ]; then
   cd /var/chef
   git submodule init
   git submodule update
+else
+  echo '/var/chef exists, not cloning.'
 fi
 
 if [ $NODE ]; then
   echo 'Start cooking...'
   cd /var/chef
   chef-solo -c solo.rb -j $NODE.json
+else
+  echo 'no NODE specified, done.'
 fi
