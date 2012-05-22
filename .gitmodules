@@ -18,10 +18,10 @@
 	url = git://github.com/opscode-cookbooks/bluepill.git
 [submodule "cookbooks/postgresql"]
 	path = cookbooks/postgresql
-	url = git://github.com/damm/postgresql.git
-[submodule "cookbook/database"]
+	url = git://github.com/opscode-cookbooks/postgresql.git
+[submodule "cookbooks/database"]
 	path = cookbook/database
 	url = git://github.com/opscode-cookbooks/database.git
-[submodule "cookbook/openssl"]
+[submodule "cookbooks/openssl"]
 	path = cookbook/openssl
 	url = git://github.com/opscode-cookbooks/openssl.git
