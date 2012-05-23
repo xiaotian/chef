@@ -4,9 +4,15 @@
     "email": "guoxiaotian@gmail.com",
     "github_username": "xiaotian"
   },
+  "appdb":{
+    "database": "hubble_production",
+    "username": "hubble",
+    "password": "password"
+  },
   "run_list": [
     "role[base_server]",
     "role[pg_server]",
+    "recipe[appdb]"
   ]
 }
 
