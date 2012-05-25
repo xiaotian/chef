@@ -11,6 +11,7 @@
   },
   "run_list": [
     "role[base_server]",
+    "role[web_server]",
     "role[pg_server]",
     "recipe[appdb]"
   ]
