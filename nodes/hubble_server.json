@@ -6,6 +6,7 @@
   },
 
   "webapp":{
+    "name" : "hubble",
     "database": {
       "dbname": "hubble_production",
       "username": "hubble",

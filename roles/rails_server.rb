@@ -1,6 +1,7 @@
 name 'rails_server'
 description 'Build a rails application environment'
-run_list('recipe[rvm::system]',
+run_list(
+         'recipe[rvm::system]',
          'recipe[webapp::database]',
          'recipe[webapp::user]',
          'recipe[webapp::rvm]',

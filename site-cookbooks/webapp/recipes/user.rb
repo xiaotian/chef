@@ -1,4 +1,3 @@
-
 # create deployment user
 deployer_name = node.webapp.deployer.name
 user deployer_name do
@@ -27,6 +26,13 @@ group 'webapp' do
   members [username, deployer_name]
   append true
   action :create
+end
+
+#add the deployer to admin group (NOPASSWD sudoer)
+group 'admin' do
+  members [deployer_name]
+  append true
+  action :manage # raises if rvm group doesn't already exist
 end
 
 #add the user to rvm group
