@@ -5,14 +5,17 @@ conn_info = {:host => "127.0.0.1",
               :username => 'postgres',
               :password => node[:postgresql][:password][:postgres]}
 
-postgresql_database node[:webapp][:database][:dbname] do
+dbname = node.webapp.database.dbname || "#{node.webapp.name}_production"
+
+postgresql_database dbname do
   connection conn_info
   action :create
 end
 
-postgresql_database_user node[:webapp][:database][:username] do
+db_username = node.webapp.database.username || node.webapp.name
+postgresql_database_user db_username do
   connection conn_info
-  password node[:webapp][:database][:password]
+  password node.webapp.database.password
   action :create
 end
 

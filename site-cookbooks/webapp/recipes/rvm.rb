@@ -3,7 +3,7 @@
 include_recipe 'rvm::system_install'
 
 ruby, gemset = node.webapp.rvm.ruby_string.split('@')
-gemset ||= node.webapp.user.name
+gemset ||= node.webapp.name
 
 raise "gemset is not specified" if gemset.nil?
 

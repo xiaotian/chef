@@ -1,0 +1,21 @@
+{
+  "dotfiles":{
+    "full_name": "Xiaotian Guo",
+    "email": "guoxiaotian@gmail.com",
+    "github_username": "xiaotian"
+  },
+
+  "webapp":{
+    "name" : "appenvy"
+  },
+
+  "run_list": [
+    "role[base_server]",
+    "role[web_server]",
+    "role[pg_server]",
+    "role[rails_server]"
+  ]
+}
+
+
+

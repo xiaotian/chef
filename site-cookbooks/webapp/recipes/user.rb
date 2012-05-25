@@ -10,7 +10,7 @@ user deployer_name do
 end
 
 #create user for webapp
-username = node.webapp.user.name
+username = node.webapp.user.name || node.webapp.name
 
 user username do
   comment 'web application user'
