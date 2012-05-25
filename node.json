@@ -1,6 +1,0 @@
-{
-  "nginx": {
-    "version": "1.2.0"
-  },
-  "run_list": ["recipe[main]"]
-}

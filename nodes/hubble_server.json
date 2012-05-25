@@ -4,16 +4,29 @@
     "email": "guoxiaotian@gmail.com",
     "github_username": "xiaotian"
   },
-  "appdb":{
-    "database": "hubble_production",
-    "username": "hubble",
-    "password": "password"
+
+  "webapp":{
+    "database": {
+      "dbname": "hubble_production",
+      "username": "hubble",
+      "password": "password"
+    },
+
+    "user":{
+      "name": "hubble",
+      "password_hash": "$1$W6yhzy3x$BBmz3H4PbHuCk9GRGAhWK1"
+    },
+
+    "rvm": {
+      "ruby_string": "ruby-1.9.3-p194@hubble"
+    }
   },
+
   "run_list": [
     "role[base_server]",
     "role[web_server]",
     "role[pg_server]",
-    "recipe[appdb]"
+    "role[rails_server]"
   ]
 }
 

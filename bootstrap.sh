@@ -6,12 +6,9 @@ command_exists () {
 apt-get -y update
 apt-get -y install build-essential git-core ruby
 
-if ! command_exists chef-solo ; then
-  echo 'Installing chef ...'
-  gem install chef ruby-shadow --no-ri --no-rdoc
-else
-  echo 'found chef-solo.'
-fi
+# do not try to check chef-solo, as vagrant comes with one. just install it and let rubygems do the work
+echo 'Installing chef ...'
+gem install chef ruby-shadow --no-ri --no-rdoc
 
 if [ ! -d "/var/chef" ]; then
   mkdir -p /var
