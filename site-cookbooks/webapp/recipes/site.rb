@@ -18,7 +18,7 @@ directory apps_root.to_s do # default is /u/apps
   recursive true
 end
 
-if node.webapp.create_app_dir #default false: allow capistrano to create the directory so it can set permission
+if node.webapp.site.create_app_dir #default false: allow capistrano to create the directory so it can set permission
   directory (apps_root + node.webapp.name).to_s do # default is /u/apps
     owner username
     group username
