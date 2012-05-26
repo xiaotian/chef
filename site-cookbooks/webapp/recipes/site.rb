@@ -7,7 +7,6 @@ template "#{node[:nginx][:dir]}/sites-available/#{node.webapp.name}" do
   owner username
 end
 
-nginx_site node.webapp.name
 
 apps_root = Pathname.new(node.webapp.site.apps_root)
 
@@ -27,4 +26,5 @@ directory (apps_root + node.webapp.name).to_s do # default is /u/apps
   action :create
 end
 
+nginx_site(node.webapp.name) if node.webapp.site.enable
 
