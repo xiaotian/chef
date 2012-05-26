@@ -4,7 +4,7 @@ command_exists () {
 }
 
 apt-get -y update
-apt-get -y install build-essential git-core ruby
+apt-get -y install build-essential git-core ruby rubygems
 
 # do not try to check chef-solo, as vagrant comes with one. just install it and let rubygems do the work
 echo 'Installing chef ...'
