@@ -27,5 +27,12 @@ if node.webapp.site.create_app_dir #default false: allow capistrano to create th
   end
 end
 
+if node.webapp.site.disable_distro_default
+  execute 'disable distro default site if any' do # nginx package installs a default site which will mask ours
+    command "rm -f #{node.nginx.dir}/sites-enabled/*default"
+    action :run
+  end
+end
+
 nginx_site(node.webapp.name) if node.webapp.site.enable
 
