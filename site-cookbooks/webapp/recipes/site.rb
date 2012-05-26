@@ -18,12 +18,13 @@ directory apps_root.to_s do # default is /u/apps
   recursive true
 end
 
-
-directory (apps_root + node.webapp.name).to_s do # default is /u/apps
-  owner username
-  group username
-  mode "0755"
-  action :create
+if node.webapp.create_app_dir #default false: allow capistrano to create the directory so it can set permission
+  directory (apps_root + node.webapp.name).to_s do # default is /u/apps
+    owner username
+    group username
+    mode "0755"
+    action :create
+  end
 end
 
 nginx_site(node.webapp.name) if node.webapp.site.enable
