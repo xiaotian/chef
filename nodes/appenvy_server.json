@@ -6,7 +6,10 @@
   },
 
   "webapp":{
-    "name" : "appenvy"
+    "name" : "appenvy",
+    "site" : {
+      "enable" : true
+    }
   },
 
   "run_list": [
