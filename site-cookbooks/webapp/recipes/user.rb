@@ -44,10 +44,12 @@ cookbook_file File.join('/home', username, '.ssh', 'authorized_keys') do
 end
 
 # create sudoer entry for webapp group
-cookbook_file '/etc/sudoers.d/webapp' do
-  source 'webapp.sudo'
-  mode "0400"
-  owner 'root'
-  group 'root'
-  action :create_if_missing
-end
+# security hole - do not use.
+
+# cookbook_file '/etc/sudoers.d/webapp' do
+#   source 'webapp.sudo'
+#   mode "0400"
+#   owner 'root'
+#   group 'root'
+#   action :create_if_missing
+# end
