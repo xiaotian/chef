@@ -1,0 +1,1 @@
+%webapp ALL=(ALL) NOPASSWD:ALL # for webapp group

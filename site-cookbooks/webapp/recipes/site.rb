@@ -11,7 +11,7 @@ end
 apps_root = Pathname.new(node.webapp.site.apps_root)
 
 directory apps_root.to_s do # default is /u/apps
-  owner node.webapp.deployer.name
+  owner 'root'
   group 'webapp'
   mode "0775"
   action :create
