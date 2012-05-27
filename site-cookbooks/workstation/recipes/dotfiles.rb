@@ -4,7 +4,7 @@ execute 'git clone dotfiles repo' do
   user username
   group username
   command "cd ~#{username} && git clone git://github.com/xiaotian/dotfiles.git .dotfiles"
-  creates File.expand_path "~#{username}/.dotfiles/Rakefile"
+  creates "/home/#{username}/.dotfiles/Rakefile"
   action :run
 end
 
@@ -12,7 +12,7 @@ execute 'update git submodules' do
   user username
   group username
   command "cd ~#{username}/.dotfiles && git submodule update --init"
-  creates File.expand_path "~#{username}/.dotfiles/vim/bundle/nerdtree/Rakefile"
+  creates "/home/#{username}/.dotfiles/vim/bundle/nerdtree/Rakefile"
   action :run
 end
 
@@ -28,7 +28,7 @@ execute 'generate dotfiles' do
                'full_name' => "#{node.workstation.user.full_name || 'Full Name'}",
                'email' => "#{node.workstation.user.email || 'Email Address'}",
                'github_username' => "#{node.workstation.user.github_username || 'Github username'}"})
-  creates File.expand_path "~#{username}/.gitconfig"
+  creates "/home/#{username}/.gitconfig"
   action :run
 end
 
