@@ -1,3 +1,7 @@
 name 'workstation'
-description 'Deploy dotfiles for a workstation'
-run_list 'recipe[mytools]', 'recipe[dotfiles]'
+description 'Create a reasonable workstation user environment'
+run_list( 
+  'recipe[mytools]', 
+  'recipe[workstation::user]', 
+  'recipe[workstation::dotfiles]'
+)

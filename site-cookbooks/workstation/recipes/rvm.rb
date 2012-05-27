@@ -1,9 +1,10 @@
 
-sudo_user = ENV['SUDO_USER']
-ruby_str = 'ruby-1.9.3-p194@rails'
+username = node.workstation.user.username
+
+ruby_str = node.workstation.rvm.ruby_string
 
 node['rvm']['user_installs'] = [
-    { 'user' => sudo_user }
+    { 'user' => username }
 ]
 
 node['rvm']['user_default_ruby'] = ruby_str
@@ -18,7 +19,8 @@ node['rvm']['user_global_gems'] = [
 include_recipe 'rvm::user' # seems this has to go after the node[] assignment above
 
 rvm_gem "rails" do
-  user sudo_user
+  user username
   ruby_string ruby_str
   action :install
 end
+
