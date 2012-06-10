@@ -13,6 +13,7 @@ node['rvm']['user_global_gems'] = [
     { 'name' => 'bundler' },
     { 'name' => 'rake' },
     { 'name' => 'cheat' },
+    { 'name' => 'pry-doc' },
     { 'name' => 'pry' }
 ]
 
