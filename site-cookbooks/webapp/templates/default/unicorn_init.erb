@@ -29,7 +29,8 @@ GEM_HOME="/usr/local/rvm/gems/$RVM_STRING/"
 UNICORN_OPTS="-D -E $ENV -c $APP_ROOT/config/unicorn/$ENV.rb"
 
 SET_PATH="cd $APP_ROOT; rvm use $RVM_STRING; export GEM_HOME=$GEM_HOME"
-CMD="$SET_PATH; $GEM_HOME/bin/unicorn $UNICORN_OPTS"
+# CMD="$SET_PATH; $GEM_HOME/bin/unicorn $UNICORN_OPTS"
+CMD="$SET_PATH; bundle exec unicorn $UNICORN_OPTS"
 
 old_pid="$PID.oldbin"
 
