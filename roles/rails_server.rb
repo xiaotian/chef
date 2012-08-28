@@ -6,6 +6,7 @@ run_list(
          'recipe[webapp::database]',
          'recipe[webapp::user]',
          'recipe[webapp::rvm]',
+         'recipe[webapp::unicorn_init]',
          'recipe[webapp::site]'
         )
 
