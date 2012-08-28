@@ -2,10 +2,7 @@
 command_exists () {
   command -v "$1" > /dev/null ;
 }
-if [ ! -f $NODE.json ]; then
-  echo "$NODE.json doesn't exist, abort."
-  exit
-fi
+
 apt-get -y update
 apt-get -y install build-essential git-core ruby ruby-dev rubygems
 
