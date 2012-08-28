@@ -21,7 +21,7 @@ USER=<%= node.webapp.user.name || node.webapp.name %>
 APP_NAME=<%= node.webapp.name %>
 RVM_STRING=<%= node.webapp.rvm.ruby_string %>@$APP_NAME
 APP_ROOT="/u/apps/$APP_NAME/current"
-PID="/u/apps/$APP_NAME/shared/pids/$APP_NAME.pid"
+PID="/u/apps/$APP_NAME/shared/pids/unicorn.pid"
 ENV=<%= node.webapp.env %>
 
 GEM_HOME="/usr/local/rvm/gems/$RVM_STRING/"
