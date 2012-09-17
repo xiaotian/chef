@@ -6,7 +6,7 @@
   },
   "run_list": [
     "role[base_server]",
-    "role[pg_server]",
+    "role[pg_server]"
   ]
 }
 
