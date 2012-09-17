@@ -6,9 +6,13 @@
   },
 
   "webapp":{
+    "env" : "production",
     "name" : "retina_tracker",
     "site" : {
       "enable" : true
+    },
+    "dependency": {
+      "packages": ["imagemagick"]
     }
   },
 

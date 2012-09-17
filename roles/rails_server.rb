@@ -2,9 +2,11 @@ name 'rails_server'
 description 'Build a rails application environment'
 run_list(
          'recipe[rvm::system]',
+         'recipe[webapp::dependency]',
          'recipe[webapp::database]',
          'recipe[webapp::user]',
          'recipe[webapp::rvm]',
+         'recipe[webapp::unicorn_init]',
          'recipe[webapp::site]'
         )
 
