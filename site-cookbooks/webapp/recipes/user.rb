@@ -43,6 +43,13 @@ cookbook_file File.join('/home', username, '.ssh', 'authorized_keys') do
   action :create_if_missing
 end
 
+# put a user level rvmrc file with trust setting that prevent rvm from prompt permission
+cookbook_file File.join('/home', username, '.rvmrc') do
+  source 'rvmrc'
+  owner username
+  group username
+  action :create_if_missing
+end
 # create sudoer entry for webapp group
 # security hole - do not use.
 
