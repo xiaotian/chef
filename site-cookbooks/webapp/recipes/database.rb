@@ -5,7 +5,7 @@ conn_info = {:host => "127.0.0.1",
               :username => 'postgres',
               :password => node[:postgresql][:password][:postgres]}
 
-dbname = node.webapp.database.dbname || "#{node.webapp.name}_production"
+dbname = node.webapp.database.dbname || "#{node.webapp.name}_#{node.webapp.env}"
 
 postgresql_database dbname do
   connection conn_info
